@@ -1,0 +1,10 @@
+@model StudentApi.Data.DTOs.Group.GroupGetDto
+<tr>
+    <td>@Model.Id</td>
+    <td>@Model.Name</td>
+    <td></td>
+    <td class="text-end">
+        <a asp-page="./Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-warning">Изменить</a>
+        <a asp-page="./Delete" asp-route-id="@Model.Id" class="btn btn-sm btn-danger">Удалить</a>
+    </td>
+</tr>
