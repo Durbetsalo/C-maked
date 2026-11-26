@@ -1,0 +1,28 @@
+@page "{id:int}"
+@model StudentRazorPages.Pages.Groups.Details
+@{
+    ViewData["Title"] = $"Группа {Model.Group.Name}";
+}
+
+<h2 class="mb-3">Информация о группе</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                Карточка группы #@Model.Group.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title mb-3">@Model.Group.Name</h5>
+                <p class="card-text">
+                    <strong>Направление:</strong> @(Model.Group.StudyProgramName ?? "Не указано")
+                </p>
+
+                <div class="mt-4">
+                    <a asp-page="./Update" asp-route-id="@Model.Group.Id" class="btn btn-warning">Редактировать</a>
+                    <a asp-page="./Index" class="btn btn-secondary">Назад к списку</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
